@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# https://docs.freekassa.ru/#section/2.-Vvedenie
+# https://docs.freekassa.com/#section/2.-Vvedenie
 # http://127.0.0.1:8081/shm/pay_systems/freekassa.cgi?action=create&amount=100&t=1
 
 use CGI::Carp qw(fatalsToBrowser);
