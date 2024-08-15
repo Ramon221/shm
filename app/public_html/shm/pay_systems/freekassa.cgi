@@ -61,7 +61,7 @@ if ( $vars{action} eq 'create' && $vars{amount} ) {
 
     my $sign = md5_hex( join(':', $p{merchant_id}, $p{order_amount}, $p{secret_word}, $p{currency}, $p{order_id} ) );
 
-    my $uri = URI->new( 'https://pay.freekassa.ru' );
+    my $uri = URI->new( 'https://pay.freekassa.com' );
     $uri->query_param_append( 'm', $p{merchant_id} );
     $uri->query_param_append( 'oa', $p{order_amount} );
     $uri->query_param_append( 'us_user_id', $user->id );
