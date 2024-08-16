@@ -19,6 +19,8 @@ services:
       DB_PORT: 3306
     links:
       - mysql
+	volumes:
+      - ./shm/app:/app  
     depends_on:
       mysql:
         condition: service_healthy
@@ -37,6 +39,8 @@ services:
       DB_PORT: 3306
     links:
       - mysql
+	volumes:
+      - ./shm/app:/app  
     depends_on:
       mysql:
         condition: service_healthy
@@ -45,6 +49,8 @@ services:
     restart: always
     environment:
       SHM_URL: http://api
+	volumes:
+      - ./shm-admin/app:/app  
     ports:
       - "0.0.0.0:8081:80"
     links:
@@ -55,6 +61,7 @@ services:
     environment:
       SHM_URL: http://api
 #    volumes:
+	   - ./shm-client/app:/app
 #      - ./styles-alternative.css:/app/assets/css/styles-alternative.css
 #      - ./head.html:/app/ssi/head.html
 #      - ./body.html:/app/ssi/body.html
@@ -83,4 +90,3 @@ services:
 volumes:
   mysql-data:
     driver: local
-
